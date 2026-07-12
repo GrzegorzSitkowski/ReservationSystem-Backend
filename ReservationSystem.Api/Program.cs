@@ -24,6 +24,9 @@ namespace ReservationSystem.Api
                     }
                 });
             });
+
+            builder.Services.AddHealthChecks();
+
             builder.Services.AddOpenApi();
 
             builder.Services.AddEndpointsApiExplorer();
@@ -38,7 +41,7 @@ namespace ReservationSystem.Api
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ReservationSystem"));
             }
-
+            app.UseHealthChecks("/hc");
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
