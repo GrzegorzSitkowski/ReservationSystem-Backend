@@ -9,6 +9,15 @@ namespace ReservationSystem.Api
 
             // Add services to the container.
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(name:"MyAllowSpecificOrigins",
+                builder =>
+                {
+                    builder.AllowAnyOrigin(); //withOrigins("http://localhost:3000", "https://localhost:3000") <- example
+                });
+            });
+
             builder.Services.AddControllers();
             builder.Services.AddSwaggerGen(c =>
             {
@@ -43,6 +52,8 @@ namespace ReservationSystem.Api
             }
             app.UseHealthChecks("/hc");
             app.UseHttpsRedirection();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
