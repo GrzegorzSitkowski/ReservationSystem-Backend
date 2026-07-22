@@ -10,4 +10,8 @@
     <ProjectReference Include="..\ReservationSystem.Domain\ReservationSystem.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\" />
+  </ItemGroup>
+
 </Project>
