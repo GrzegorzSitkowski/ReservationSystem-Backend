@@ -1,4 +1,6 @@
 
+using ReservationSystem.Infrastructure;
+
 namespace ReservationSystem.Api
 {
     public class Program
@@ -17,7 +19,7 @@ namespace ReservationSystem.Api
                     builder.AllowAnyOrigin(); //withOrigins("http://localhost:3000", "https://localhost:3000") <- example
                 });
             });
-
+            builder.Services.AddInfrastructure(builder.Configuration);
             builder.Services.AddControllers();
             builder.Services.AddSwaggerGen(c =>
             {
