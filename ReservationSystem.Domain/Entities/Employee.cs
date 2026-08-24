@@ -8,8 +8,8 @@ namespace ReservationSystem.Domain.Entities
 {
     public class Employee
     {
-        public Guid Id { get; set; }
-        public Guid UserId { get; set; }
-        public required Guid SalonId { get; set; }
+        public Guid Id { get; private set; }
+        public Guid UserId { get; private set; }
+        public Guid SalonId { get; private set; }
     }
 }
