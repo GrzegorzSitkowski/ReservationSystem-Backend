@@ -1,5 +1,6 @@
 
 using ReservationSystem.Infrastructure;
+using ReservationSystem.Persistance;
 
 namespace ReservationSystem.Api
 {
@@ -20,6 +21,7 @@ namespace ReservationSystem.Api
                 });
             });
             builder.Services.AddInfrastructure(builder.Configuration);
+            builder.Services.AddPersistance(builder.Configuration);
             builder.Services.AddControllers();
             builder.Services.AddSwaggerGen(c =>
             {
