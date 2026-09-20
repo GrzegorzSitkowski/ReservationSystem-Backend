@@ -16,5 +16,6 @@ namespace ReservationSystem.Persistance
         public DbSet<Salon> Salons { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<User> Users { get; set; }
-        }
+
+    }
 }
