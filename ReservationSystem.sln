@@ -10,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystem.Infrastructure", "ReservationSystem.Infrastructure\ReservationSystem.Infrastructure.csproj", "{BAC430DA-79B6-42FD-9E49-CE13E7D29C97}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystem.Persistance", "ReservationSystem.Persistance\ReservationSystem.Persistance.csproj", "{386CAD07-DA3E-46D2-B551-D485915800E7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7654EE3E-60E7-47D1-A124-21E04A1D0696} = {7654EE3E-60E7-47D1-A124-21E04A1D0696}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{998F80B6-99FE-40F3-9EF3-5897B7B9CCF5}"
 EndProject
