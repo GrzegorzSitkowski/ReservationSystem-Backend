@@ -17,4 +17,5 @@ namespace ReservationSystem.Persistance
                 options.UseSqlServer(configuration.GetConnectionString("ReservationSystemDatabase")));
             return services;
         }
+    }
 }
