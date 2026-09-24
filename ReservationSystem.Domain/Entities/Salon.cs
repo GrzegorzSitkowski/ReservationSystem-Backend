@@ -8,15 +8,15 @@ namespace ReservationSystem.Domain.Entities
 {
     public class Salon
     {
-        public Guid Id { get; private set; }
-        public string Name { get; private set; }
-        public string Address { get; private set; }
-        public string PhoneNumber { get; private set; }
-        public string Email { get; private set; }
-        public string? Description { get; private set; }
-        public Guid OwnerId { get; private set; }
-        public DateTimeOffset CreatedAt { get; private set; } = DateTimeOffset.UtcNow;
-        public DateTimeOffset UpdatedAt { get; private set; }
-        public bool IsActive { get; private set; } = true;
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string? Description { get; set; }
+        public Guid OwnerId { get; set; }
+        public DateTimeOffset CreatedAt { get; set; } = DateTimeOffset.UtcNow;
+        public DateTimeOffset UpdatedAt { get; set; }
+        public bool IsActive { get; set; } = true;
     }
 }

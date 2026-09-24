@@ -9,14 +9,14 @@ namespace ReservationSystem.Domain.Entities
 {
     public class Reservation
     {
-        public Guid Id { get; private set; }
-        public Guid CustomerId { get; private set; }
-        public Guid EmployeeId { get; private set; }
-        public Guid ServiceId { get; private set; }
-        public Guid SalonId { get; private set; }
-        public DateTimeOffset StartTime { get; private set; }
-        public DateTimeOffset EndTime { get; private set; }
-        public string? Notes { get; private set; }
-        public ReservationStatus Status { get; private set; } = ReservationStatus.Pending;
+        public Guid Id { get; set; }
+        public Guid CustomerId { get; set; }
+        public Guid EmployeeId { get; set; }
+        public Guid ServiceId { get; set; }
+        public Guid SalonId { get; set; }
+        public DateTimeOffset StartTime { get; set; }
+        public DateTimeOffset EndTime { get; set; }
+        public string? Notes { get; set; }
+        public ReservationStatus Status { get; set; } = ReservationStatus.Pending;
     }
 }

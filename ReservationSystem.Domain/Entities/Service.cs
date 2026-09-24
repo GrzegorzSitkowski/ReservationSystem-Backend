@@ -8,12 +8,12 @@ namespace ReservationSystem.Domain.Entities
 {
     public class Service
     {
-        public Guid Id { get; private set; }
-        public string Name { get; private set; }
-        public string? Description { get; private set; }
-        public decimal Price { get; private set; }
-        public TimeSpan Duration { get; private set; }
-        public Guid SalonId { get; private set; }
-        public bool IsActive { get; private set; } = true;
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public string? Description { get; set; }
+        public decimal Price { get; set; }
+        public TimeSpan Duration { get; set; }
+        public Guid SalonId { get; set; }
+        public bool IsActive { get; set; } = true;
     }
 }
