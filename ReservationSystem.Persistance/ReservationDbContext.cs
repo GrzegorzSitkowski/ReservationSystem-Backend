@@ -8,7 +8,7 @@ namespace ReservationSystem.Persistance
         public ReservationDbContext(DbContextOptions<ReservationDbContext> options)
             : base(options)
         {
-            
+
         }
 
         public DbSet<Employee> Employees { get; set; }
@@ -17,5 +17,10 @@ namespace ReservationSystem.Persistance
         public DbSet<Service> Services { get; set; }
         public DbSet<User> Users { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.SeedData();
+        }
     }
 }
