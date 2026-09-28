@@ -12,6 +12,16 @@ namespace ReservationSystem.Persistance
     {
         public static void SeedData(this ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Employee>(e =>
+            {
+                e.HasData(new Employee()
+                {
+                    Id = Guid.Parse("33333333-3333-3333-3333-333333333333"),
+                    UserId = Guid.Parse("22222222-2222-2222-2222-222222222222"),
+                    SalonId = Guid.Parse("11111111-1111-1111-1111-111111111111")
+                });
+            });
+
             modelBuilder.Entity<Salon>(s =>
             {
                 s.HasData(new Salon()
