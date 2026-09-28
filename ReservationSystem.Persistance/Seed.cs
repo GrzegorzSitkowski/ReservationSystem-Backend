@@ -52,6 +52,19 @@ namespace ReservationSystem.Persistance
                     OwnerId = Guid.Parse("22222222-2222-2222-2222-222222222222")
                 });
             });
+
+            modelBuilder.Entity<Service>(se =>
+            {
+                se.HasData(new Service()
+                {
+                    Id = Guid.Parse("66666666-6666-6666-6666-666666666666"),
+                    Name = "Strzyżenie krótkich włosów.",
+                    Description = "Czas ok. 30 min.",
+                    Duration = TimeSpan.FromMinutes(30),
+                    Price = 30.00m,
+                    SalonId = Guid.Parse("11111111-1111-1111-1111-111111111111")
+                });
+            });
         }
     }
 }
