@@ -32,8 +32,8 @@ namespace ReservationSystem.Persistance
                     EmployeeId = Guid.Parse("33333333-3333-3333-3333-333333333333"),
                     ServiceId = Guid.Parse("66666666-6666-6666-6666-666666666666"),
                     SalonId = Guid.Parse("11111111-1111-1111-1111-111111111111"),
-                    StartTime = DateTimeOffset.Now.AddDays(1),
-                    EndTime = DateTimeOffset.Now.AddDays(1).AddHours(1),
+                    StartTime = new DateTimeOffset(2026, 10, 1, 10, 0, 0, TimeSpan.FromHours(2)),
+                    EndTime = new DateTimeOffset(2026, 10, 1, 11, 0, 0, TimeSpan.FromHours(2)),
                     Notes = "Please be on time.",
                     Status = ReservationStatus.Pending
                 });
@@ -49,7 +49,8 @@ namespace ReservationSystem.Persistance
                     PhoneNumber = "123-456-789",
                     Email = "xyz@gmail.com",
                     Description = "Barber shop.",
-                    OwnerId = Guid.Parse("22222222-2222-2222-2222-222222222222")
+                    OwnerId = Guid.Parse("22222222-2222-2222-2222-222222222222"),
+                    CreatedAt = new DateTimeOffset(2026, 9, 30, 10, 0, 0,TimeSpan.FromHours(2))
                 });
             });
 

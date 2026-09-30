@@ -19,7 +19,7 @@ namespace ReservationSystem.Persistance
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder);
             modelBuilder.SeedData();
         }
     }

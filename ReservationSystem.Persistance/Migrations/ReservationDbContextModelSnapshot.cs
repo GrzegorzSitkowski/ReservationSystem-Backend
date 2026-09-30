@@ -37,6 +37,14 @@ namespace ReservationSystem.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Employees");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("33333333-3333-3333-3333-333333333333"),
+                            SalonId = new Guid("11111111-1111-1111-1111-111111111111"),
+                            UserId = new Guid("22222222-2222-2222-2222-222222222222")
+                        });
                 });
 
             modelBuilder.Entity("ReservationSystem.Domain.Entities.Reservation", b =>
@@ -72,6 +80,20 @@ namespace ReservationSystem.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Reservations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("44444444-4444-4444-4444-444444444444"),
+                            CustomerId = new Guid("55555555-5555-5555-5555-555555555555"),
+                            EmployeeId = new Guid("33333333-3333-3333-3333-333333333333"),
+                            EndTime = new DateTimeOffset(new DateTime(2026, 10, 1, 11, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)),
+                            Notes = "Please be on time.",
+                            SalonId = new Guid("11111111-1111-1111-1111-111111111111"),
+                            ServiceId = new Guid("66666666-6666-6666-6666-666666666666"),
+                            StartTime = new DateTimeOffset(new DateTime(2026, 10, 1, 10, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)),
+                            Status = 0
+                        });
                 });
 
             modelBuilder.Entity("ReservationSystem.Domain.Entities.Salon", b =>
@@ -114,6 +136,21 @@ namespace ReservationSystem.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Salons");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("11111111-1111-1111-1111-111111111111"),
+                            Address = "Hetmańska 15, Poznań",
+                            CreatedAt = new DateTimeOffset(new DateTime(2026, 9, 30, 10, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)),
+                            Description = "Barber shop.",
+                            Email = "xyz@gmail.com",
+                            IsActive = true,
+                            Name = "Salon XYZ",
+                            OwnerId = new Guid("22222222-2222-2222-2222-222222222222"),
+                            PhoneNumber = "123-456-789",
+                            UpdatedAt = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0))
+                        });
                 });
 
             modelBuilder.Entity("ReservationSystem.Domain.Entities.Service", b =>
@@ -144,6 +181,18 @@ namespace ReservationSystem.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Services");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("66666666-6666-6666-6666-666666666666"),
+                            Description = "Czas ok. 30 min.",
+                            Duration = new TimeSpan(0, 0, 30, 0, 0),
+                            IsActive = true,
+                            Name = "Strzyżenie krótkich włosów.",
+                            Price = 30.00m,
+                            SalonId = new Guid("11111111-1111-1111-1111-111111111111")
+                        });
                 });
 
             modelBuilder.Entity("ReservationSystem.Domain.Entities.User", b =>
