@@ -9,6 +9,6 @@ namespace ReservationSystem.Application.Employees.Queries.GetEmployeeDetail
 {
     public class GetEmployeeDetailQuery : IRequest<EmployeeDetailVm>
     {
-        public int EmployeeId { get; set; }
+        public Guid EmployeeId { get; set; }
     }
 }
