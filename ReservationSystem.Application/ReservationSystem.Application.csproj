@@ -14,4 +14,8 @@
     <ProjectReference Include="..\ReservationSystem.Domain\ReservationSystem.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Employees\Commands\" />
+  </ItemGroup>
+
 </Project>
