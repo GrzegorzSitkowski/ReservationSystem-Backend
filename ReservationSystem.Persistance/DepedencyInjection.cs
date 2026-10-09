@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ReservationSystem.Application.Common.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace ReservationSystem.Persistance
         {
             services.AddDbContext<ReservationDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("ReservationSystemDatabase")));
+
+            services.AddScoped<IReservationDbContext, ReservationDbContext>();
             return services;
         }
     }

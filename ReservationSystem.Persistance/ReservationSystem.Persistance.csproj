@@ -18,6 +18,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="10.0.11" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.11" />
     <PackageReference Include="Microsoft.SqlServer.Server" Version="1.0.0" />
+    <ProjectReference Include="..\ReservationSystem.Application\ReservationSystem.Application.csproj" />
 	<ProjectReference Include="..\ReservationSystem.Domain\ReservationSystem.Domain.csproj" />
   </ItemGroup>
 

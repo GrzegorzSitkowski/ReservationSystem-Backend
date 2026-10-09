@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ReservationSystem.Application.Common.Interfaces;
 using ReservationSystem.Domain.Entities;
 
 namespace ReservationSystem.Persistance
 {
-    public class ReservationDbContext : DbContext
+    public class ReservationDbContext : DbContext, IReservationDbContext
     {
         public ReservationDbContext(DbContextOptions<ReservationDbContext> options)
             : base(options)

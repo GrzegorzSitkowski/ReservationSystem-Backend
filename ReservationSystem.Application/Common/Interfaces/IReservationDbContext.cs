@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ReservationSystem.Application.Common.Interfaces
 {
-    internal interface IReservationDbContext
+    public interface IReservationDbContext
     {
         DbSet<Employee> Employees { get; set; }
         DbSet<Reservation> Reservations { get; set; }
