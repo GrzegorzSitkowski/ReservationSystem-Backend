@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ReservationSystem.Domain\ReservationSystem.Domain.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
+    <ProjectReference Include="..\ReservationSystem.Domain\ReservationSystem.Domain.csproj" />
   </ItemGroup>
 
 </Project>
