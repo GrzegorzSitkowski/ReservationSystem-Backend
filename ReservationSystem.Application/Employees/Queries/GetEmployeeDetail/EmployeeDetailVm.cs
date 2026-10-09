@@ -8,5 +8,8 @@ namespace ReservationSystem.Application.Employees.Queries.GetEmployeeDetail
 {
     public class EmployeeDetailVm
     {
+        public Guid Id { get; set; }
+        public Guid UserId { get; set; }
+        public Guid SalonId { get; set; }
     }
 }
