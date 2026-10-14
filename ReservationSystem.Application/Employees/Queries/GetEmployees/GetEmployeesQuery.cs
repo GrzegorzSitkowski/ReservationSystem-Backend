@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ReservationSystem.Application.Employees.Queries.GetEmployees
 {
-    public class GetEmployeesQuery : IRequest<List<EmployeesVm>>
+    public class GetEmployeesQuery : IRequest<EmployeesVm>
     {
     }
 }
