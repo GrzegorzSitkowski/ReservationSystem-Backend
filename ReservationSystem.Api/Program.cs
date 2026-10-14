@@ -1,6 +1,7 @@
 
 using ReservationSystem.Infrastructure;
 using ReservationSystem.Persistance;
+using ReservationSystem.Application;
 
 namespace ReservationSystem.Api
 {
@@ -20,6 +21,7 @@ namespace ReservationSystem.Api
                     builder.AllowAnyOrigin(); //withOrigins("http://localhost:3000", "https://localhost:3000") <- example
                 });
             });
+            builder.Services.AddApplication();
             builder.Services.AddInfrastructure(builder.Configuration);
             builder.Services.AddPersistance(builder.Configuration);
             builder.Services.AddControllers();
