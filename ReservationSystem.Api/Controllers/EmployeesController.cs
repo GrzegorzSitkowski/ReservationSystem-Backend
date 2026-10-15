@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ReservationSystem.Application.Employees.Commands.CreateEmployee;
+using ReservationSystem.Application.Employees.Commands.DeleteEmployee;
 using ReservationSystem.Application.Employees.Commands.UpdateEmployee;
 using ReservationSystem.Application.Employees.Queries.GetEmployeeDetail;
 using ReservationSystem.Application.Employees.Queries.GetEmployees;
@@ -50,6 +51,13 @@ namespace ReservationSystem.WebApi.Controllers
 
             await Mediator.Send(command);
 
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteEmployee(Guid id)
+        {
+            await Mediator.Send(new DeleteEmployeeCommand { EmployeeId = id });
             return NoContent();
         }
     }
