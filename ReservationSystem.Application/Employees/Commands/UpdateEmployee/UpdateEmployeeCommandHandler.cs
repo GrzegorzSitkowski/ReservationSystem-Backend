@@ -19,12 +19,11 @@ namespace ReservationSystem.Application.Employees.Commands.UpdateEmployee
         public async Task Handle(UpdateEmployeeCommand request, CancellationToken cancellationToken)
         {
             var employee = await _context.Employees.Where(e => e.Id == request.Id).FirstOrDefaultAsync(cancellationToken);
-            if (employee != null)
-            {
-                employee.UserId = request.UserId;
-                employee.SalonId = request.SalonId;
-                await _context.SaveChangesAsync(cancellationToken);
-            }
+
+            employee.UserId = request.UserId;
+            employee.SalonId = request.SalonId;
+
+            await _context.SaveChangesAsync(cancellationToken);
         }
     }
 }

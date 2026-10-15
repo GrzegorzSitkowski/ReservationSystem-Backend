@@ -1,14 +1,24 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ReservationSystem.Application.Employees.Commands.CreateEmployee;
+using ReservationSystem.Application.Employees.Commands.UpdateEmployee;
 using ReservationSystem.Application.Employees.Queries.GetEmployeeDetail;
 using ReservationSystem.Application.Employees.Queries.GetEmployees;
+using ReservationSystem.Persistance;
 
 namespace ReservationSystem.WebApi.Controllers
 {
     [Route("api/employees")]
     public class EmployeesController : BaseController
     {
+        private readonly ReservationDbContext _context;
+
+        public EmployeesController(ReservationDbContext context)
+        {
+            _context = context;
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<EmployeeDetailVm>> GetDetails(Guid id)
         {
@@ -19,8 +29,8 @@ namespace ReservationSystem.WebApi.Controllers
         [HttpGet]
         public async Task<ActionResult<EmployeesVm>> GetEmployeesList()
         {
-            var vm = await Mediator.Send(new GetEmployeesQuery());
-            return vm;
+            var employess = await _context.Employees.AsNoTracking().ToListAsync();
+            return Ok(employess);
         }
 
         [HttpPost]
@@ -28,6 +38,19 @@ namespace ReservationSystem.WebApi.Controllers
         {
             var employeeId = await Mediator.Send(command);
             return Ok(employeeId);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateEmployee(Guid id, [FromBody]UpdateEmployeeCommand command)
+        {
+            if (id != command.Id)
+            {
+                return BadRequest();
+            }
+
+            await Mediator.Send(command);
+
+            return NoContent();
         }
     }
 }
