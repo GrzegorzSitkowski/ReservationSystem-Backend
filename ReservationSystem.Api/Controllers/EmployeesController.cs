@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ReservationSystem.Application.Employees.Commands.CreateEmployee;
 using ReservationSystem.Application.Employees.Queries.GetEmployeeDetail;
 using ReservationSystem.Application.Employees.Queries.GetEmployees;
 
@@ -20,6 +21,13 @@ namespace ReservationSystem.WebApi.Controllers
         {
             var vm = await Mediator.Send(new GetEmployeesQuery());
             return vm;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Guid>> CreateEmployee(CreateEmployeeCommand command)
+        {
+            var employeeId = await Mediator.Send(command);
+            return Ok(employeeId);
         }
     }
 }
