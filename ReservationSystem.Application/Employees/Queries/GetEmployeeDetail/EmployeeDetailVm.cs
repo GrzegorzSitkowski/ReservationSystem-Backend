@@ -15,7 +15,7 @@ namespace ReservationSystem.Application.Employees.Queries.GetEmployeeDetail
         public Guid UserId { get; set; }
         public Guid SalonId { get; set; }
 
-        public void Mappiing(Profile profile)
+        public void Mapping(Profile profile)
         {
             profile.CreateMap<Employee, EmployeeDetailVm>();
         }
