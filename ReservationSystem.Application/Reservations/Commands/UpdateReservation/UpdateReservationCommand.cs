@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ReservationSystem.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,6 @@ namespace ReservationSystem.Application.Reservations.Commands.UpdateReservation
         public DateTimeOffset StartTime { get; set; }
         public DateTimeOffset EndTime { get; set; }
         public string? Notes { get; set; }
+        public ReservationStatus Status { get; set; } = ReservationStatus.Pending;
     }
 }
