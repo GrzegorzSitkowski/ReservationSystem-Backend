@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ReservationSystem.Application.Reservations.Commands.CreateReservation;
 using ReservationSystem.Application.Reservations.Commands.DeleteReservation;
 using ReservationSystem.Application.Reservations.Commands.UpdateReservation;
@@ -9,7 +10,6 @@ using ReservationSystem.Persistance;
 namespace ReservationSystem.WebApi.Controllers
 {
     [Route("api/reservations")]
-    [ApiController]
     public class ReservationsController : BaseController
     {
         private readonly ReservationDbContext _context;
@@ -20,16 +20,16 @@ namespace ReservationSystem.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<ReservationDetailVm>> GetReservationDetail (Guid id)
+        public async Task<ActionResult<ReservationDetailVm>> GetDetails (Guid id)
         {
-            var vm = await Mediator.Send(new GetReservationDetailQuery { ReservationId = id });
+            var vm = await Mediator.Send(new GetReservationDetailQuery() { ReservationId = id });
             return vm;
         }
 
         [HttpGet]
-        public async Task<ActionResult<ReservationsVm>> GetReservations()
+        public async Task<ActionResult<ReservationsVm>> GetReservationsList()
         {
-            var reservations = await Mediator.Send(new GetReservationsQuery());
+            var reservations = await _context.Reservations.AsNoTracking().ToListAsync();
             return Ok(reservations);
         }
 
@@ -40,7 +40,7 @@ namespace ReservationSystem.WebApi.Controllers
             return Ok(reservationId);
         }
 
-        [HttpPut("{id")]
+        [HttpPut("{id}")]
         public async Task<ActionResult> UpdateReservation(Guid id, [FromBody] UpdateReservationCommand command)
         {
             if(id != command.Id)

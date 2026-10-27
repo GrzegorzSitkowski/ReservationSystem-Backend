@@ -24,7 +24,7 @@ namespace ReservationSystem.Application.Reservations.Queries.GetReservations
 
         public async Task<ReservationsVm> Handle(GetReservationsQuery request, CancellationToken cancellationToken)
         {
-            var reserations = _context.Reservations.AsNoTracking().
+            var reservations = await _context.Reservations.AsNoTracking().
                 ProjectTo<ReservationsVm>(_mapper.ConfigurationProvider).ToListAsync();
 
             return new ReservationsVm();

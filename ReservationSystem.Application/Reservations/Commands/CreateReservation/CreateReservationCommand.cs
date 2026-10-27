@@ -16,6 +16,6 @@ namespace ReservationSystem.Application.Reservations.Commands.CreateReservation
         public DateTimeOffset StartTime { get; set; }
         public DateTimeOffset EndTime { get; set; }
         public string? Notes { get; set; }
-    {
+    
     }
 }
