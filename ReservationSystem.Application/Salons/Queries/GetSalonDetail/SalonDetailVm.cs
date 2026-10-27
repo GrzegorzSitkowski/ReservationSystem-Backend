@@ -1,7 +1,7 @@
 ﻿using ReservationSystem.Application.Common.Mappings;
 using ReservationSystem.Domain.Entities;
 
-namespace ReservationSystem.Application.Salon.Queries.GetSalonDetail
+namespace ReservationSystem.Application.Salons.Queries.GetSalonDetail
 {
     public  class SalonDetailVm : IMapFrom<Domain.Entities.Salon>
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReservationSystem.Application.Salon.Commands.CreateSalon
+namespace ReservationSystem.Application.Salons.Commands.CreateSalon
 {
     public class CreateSalonCommand : IRequest<Guid>
     {

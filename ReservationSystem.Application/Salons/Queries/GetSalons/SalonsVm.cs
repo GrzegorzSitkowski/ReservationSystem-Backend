@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReservationSystem.Application.Salon.Queries.GetSalons
+namespace ReservationSystem.Application.Salons.Queries.GetSalons
 {
     public class SalonsVm : IMapFrom<Domain.Entities.Salon>
     {

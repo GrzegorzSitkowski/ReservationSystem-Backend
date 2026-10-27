@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReservationSystem.Application.Salon.Queries.GetSalonDetail
+namespace ReservationSystem.Application.Salons.Queries.GetSalonDetail
 {
     public class GetSalonDetailQueryHandler : IRequestHandler<GetSalonDetailQuery, SalonDetailVm>
     {
