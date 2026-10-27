@@ -3,7 +3,7 @@ using ReservationSystem.Domain.Entities;
 
 namespace ReservationSystem.Application.Salons.Queries.GetSalonDetail
 {
-    public  class SalonDetailVm : IMapFrom<Domain.Entities.Salon>
+    public  class SalonDetailVm : IMapFrom<Salon>
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
@@ -18,7 +18,7 @@ namespace ReservationSystem.Application.Salons.Queries.GetSalonDetail
 
         public void Mapping(AutoMapper.Profile profile)
         {
-            profile.CreateMap<Domain.Entities.Salon, SalonDetailVm>();
+            profile.CreateMap<Salon, SalonDetailVm>();
         }
     }
 }
