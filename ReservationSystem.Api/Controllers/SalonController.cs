@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ReservationSystem.Application.Salons.Commands.CreateSalon;
 using ReservationSystem.Application.Salons.Commands.DeleteSalon;
 using ReservationSystem.Application.Salons.Commands.UpdateSalon;
 using ReservationSystem.Application.Salons.Queries.GetSalonDetail;
@@ -30,6 +31,13 @@ namespace ReservationSystem.WebApi.Controllers
         {
             var salons = await _context.Salons.AsNoTracking().ToListAsync();
             return Ok(salons);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Guid>> CreateSalon(CreateSalonCommand command)
+        {
+            var salonId = await Mediator.Send(command);
+            return Ok(salonId);
         }
 
         [HttpPut("{id}")]
